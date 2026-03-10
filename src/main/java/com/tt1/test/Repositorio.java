@@ -14,18 +14,18 @@ public class Repositorio {
     // --- Métodos requeridos por la práctica ---
 
     public ToDo encontrarToDo(String nombre) {
-        throw new UnsupportedOperationException("Clase aún no implementada."); [cite: 50]
+        throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 
     public void marcarComoCompletado(String nombre) {
-        throw new UnsupportedOperationException("Clase aún no implementada."); [cite: 50]
+        throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 
     public void guardarToDo(ToDo todo) {
-        throw new UnsupportedOperationException("Clase aún no implementada."); [cite: 50]
+        throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 
     public void guardarEmail(String email) {
-        throw new UnsupportedOperationException("Clase aún no implementada."); [cite: 50]
+        throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 }
