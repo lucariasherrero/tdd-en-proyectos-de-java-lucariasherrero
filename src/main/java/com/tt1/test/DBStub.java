@@ -4,39 +4,34 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class DBStub {
-    // Colecciones internas para emular la base de datos
-    private List<ToDo> tareas;
-    private List<String> agendaEmails;
+    private List<ToDo> tareas = new ArrayList<>();
+    private List<String> agendaEmails = new ArrayList<>();
 
     public DBStub() {
-        // Inicialización (aunque no la usemos todavía por el throw)
     }
 
-    // --- Métodos CRUD para ToDo ---
 
     public void agregarTarea(ToDo tarea) {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
+        this.tareas.add(tarea);
     }
 
     public List<ToDo> obtenerTodasLasTareas() {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
+        return new ArrayList<>(this.tareas);
     }
 
     public void actualizarTarea(int id, ToDo tarea) {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 
     public void eliminarTarea(int id) {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 
-    // --- Métodos para la Agenda de Emails ---
+
 
     public void agregarEmail(String email) {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
+        this.agendaEmails.add(email);
     }
 
     public List<String> obtenerEmails() {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
+        return new ArrayList<>(this.agendaEmails);
     }
 }

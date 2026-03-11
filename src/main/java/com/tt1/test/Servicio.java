@@ -1,40 +1,44 @@
 package com.tt1.test;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Servicio {
 
-    // Dependencias necesarias para la lógica de negocio
     private Repositorio repositorio;
     private MailerStub mailer;
 
     public Servicio(Repositorio repositorio, MailerStub mailer) {
-        // En el futuro, aquí conectaremos las piezas
+        this.repositorio = repositorio;
+        this.mailer = mailer;
     }
 
-    // --- Métodos de operación del usuario ---
-
     public void crearTarea(String nombre, LocalDate fechaLimite) {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
+        ToDo nuevaTarea = new ToDo();
+        nuevaTarea.setNombre(nombre);
+        nuevaTarea.setFechaLimite(fechaLimite);
+        nuevaTarea.setCompletado(false);
+
+        repositorio.guardarToDo(nuevaTarea);
+
+        verificarTareasCaducadasYNotificar();
     }
 
     public void agregarEmail(String email) {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
+        repositorio.guardarEmail(email);
+        verificarTareasCaducadasYNotificar();
     }
 
     public void marcarTareaComoFinalizada(String nombre) {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
+        repositorio.marcarComoCompletado(nombre);
+        verificarTareasCaducadasYNotificar();
     }
 
     public List<ToDo> consultarPendientes() {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
+        return new ArrayList<>();
     }
 
-    // --- Método interno de soporte ---
-
     private void verificarTareasCaducadasYNotificar() {
-        // Este método se llamará automáticamente en cada operación
-        throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 }

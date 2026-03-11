@@ -4,28 +4,29 @@ import java.util.List;
 
 public class Repositorio {
 
-    // El repositorio necesita conocer el "almacén" de datos
     private DBStub db;
 
     public Repositorio(DBStub db) {
-        // En el futuro, aquí asignaremos la instancia del stub
+        this.db = db;
     }
 
-    // --- Métodos requeridos por la práctica ---
+
 
     public ToDo encontrarToDo(String nombre) {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
+        return db.obtenerTodasLasTareas().stream()
+            .filter(t -> t.getNombre().equals(nombre))
+            .findFirst()
+            .orElse(null);
     }
 
     public void marcarComoCompletado(String nombre) {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
     }
 
     public void guardarToDo(ToDo todo) {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
+        db.agregarTarea(todo);
     }
 
     public void guardarEmail(String email) {
-        throw new UnsupportedOperationException("Clase aún no implementada.");
+        db.agregarEmail(email);
     }
 }
