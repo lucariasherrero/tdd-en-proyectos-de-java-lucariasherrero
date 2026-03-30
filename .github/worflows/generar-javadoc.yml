@@ -3,7 +3,7 @@ name: Generar y Publicar Javadoc
 on:
     push:
         branches:
-            - [cite_start]stable  # Solo se ejecuta cuando hay cambios en la rama stable
+            - stable
 
 permissions:
     contents: read
@@ -29,7 +29,7 @@ jobs:
             - name: Subir artefacto para Pages
               uses: actions/upload-pages-artifact@v3
               with:
-                  path: 'docs' # La carpeta que creamos con javadoc
+                  path: 'docs'
 
     deploy:
         needs: build-docs
